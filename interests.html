@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-Portfolio — Interests & Activities</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .interest-grid {
+    display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem;
+  }
+  .interest-card {
+    background: var(--white); border: 1px solid rgba(200,169,81,0.15);
+    padding: 2rem; text-align: center; transition: all var(--trans);
+    position: relative; overflow: hidden;
+  }
+  .interest-card:hover {
+    background: var(--ink); color: var(--cream);
+    transform: translateY(-4px); box-shadow: var(--shadow);
+  }
+  .interest-card::before {
+    content: ''; position: absolute; top:0; left:0;
+    width: 100%; height: 3px; background: var(--gold);
+  }
+  .interest-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+  .interest-name {
+    font-family: var(--font-display); font-size: 1.1rem;
+    font-weight: 700; margin-bottom: 0.5rem;
+  }
+  .interest-desc {
+    font-size: 0.82rem; color: var(--muted); line-height: 1.6;
+  }
+  .interest-card:hover .interest-desc { color: rgba(244,241,235,0.65); }
+
+  .activity-card {
+    background: var(--white); border: 1px solid rgba(200,169,81,0.15);
+    padding: 1.8rem; display: flex; gap: 1.5rem; align-items: flex-start;
+    transition: border-color var(--trans), transform var(--trans);
+    margin-bottom: 1rem;
+  }
+  .activity-card:hover { border-color: var(--gold); transform: translateX(4px); }
+  .activity-icon {
+    width: 50px; height: 50px; flex-shrink: 0;
+    background: linear-gradient(135deg, rgba(200,169,81,0.15), rgba(200,169,81,0.3));
+    border: 1px solid rgba(200,169,81,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+  }
+  .activity-title { font-weight: 600; margin-bottom: 0.25rem; }
+  .activity-meta { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.5rem; }
+  .activity-desc { font-size: 0.86rem; color: var(--muted); line-height: 1.55; }
+
+  .aspiration-box {
+    background: var(--ink); color: var(--cream);
+    padding: 2.5rem; border-left: 4px solid var(--gold);
+    position: relative; overflow: hidden;
+  }
+  .aspiration-box::before {
+    content: '"'; position: absolute; top: -1rem; left: 1rem;
+    font-family: var(--font-display); font-size: 8rem;
+    color: rgba(200,169,81,0.1); line-height: 1;
+  }
+  .aspiration-text {
+    font-family: var(--font-display); font-size: 1.3rem;
+    font-style: italic; line-height: 1.6; position: relative; z-index: 1;
+  }
+  .aspiration-name {
+    font-size: 0.82rem; color: var(--gold);
+    margin-top: 1rem; position: relative; z-index: 1;
+  }
+
+  @media(max-width:900px) {
+    .interest-grid { grid-template-columns: repeat(2,1fr); }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">Portfolio</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="qualifications.html">Qualifications</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="interests.html">Interests</a></li>
+    <li><a href="personality.html">Personality</a></li>
+    <li><a href="swot.html">SWOT</a></li>
+    <li><a href="goals.html">Goals</a></li>
+  </ul>
+  <button class="nav-hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="page-eyebrow">Section 03</div>
+    <h1>Interests &amp; Activities</h1>
+    <p>Beyond academics and projects — the personal interests, hobbies, and activities that shape who I am and how I think.</p>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- Interests & Hobbies -->
+  <div class="section-block">
+    <h2 class="block-title">Interests &amp; Hobbies</h2>
+    <p class="block-desc">Activities and areas I am genuinely passionate about outside of university work.</p>
+    <div class="interest-grid">
+
+      <div class="interest-card">
+        <div class="interest-icon">📊</div>
+        <div class="interest-name">Data & Analytics</div>
+        <div class="interest-desc">Passionate about turning raw data into meaningful insights. I explore datasets, build dashboards, and look for patterns beyond what coursework requires.</div>
+      </div>
+
+      <div class="interest-card">
+        <div class="interest-icon">🤖</div>
+        <div class="interest-name">Artificial Intelligence</div>
+        <div class="interest-desc">Fascinated by machine learning and AI applications. I enjoy building AI projects — from food classifiers to multimodal interview systems — to understand how AI solves real problems.</div>
+      </div>
+
+      <div class="interest-card">
+        <div class="interest-icon">💻</div>
+        <div class="interest-name">Web Development</div>
+        <div class="interest-desc">Enjoy building responsive, functional web applications. I like the creative side of bringing ideas to life through code — from UI design to backend logic.</div>
+      </div>
+
+      <div class="interest-card">
+        <div class="interest-icon">📚</div>
+        <div class="interest-name">Reading</div>
+        <div class="interest-desc">Enjoy reading novels and story books in my free time. Reading helps me unwind, sparks my imagination, and gives me a break from the technical world.</div>
+      </div>
+
+      <div class="interest-card">
+        <div class="interest-icon">🎨</div>
+        <div class="interest-name">Painting</div>
+        <div class="interest-desc">Painting is my creative outlet — I enjoy experimenting with colours and expressing ideas visually. It balances the logical, structured nature of my technical work with a more artistic and free-form perspective.</div>
+      </div>
+
+      <div class="interest-card">
+        <div class="interest-icon">🏊</div>
+        <div class="interest-name">Swimming</div>
+        <div class="interest-desc">Swimming is my go-to activity for staying active and clearing my mind. It builds discipline, focus, and physical endurance — qualities that carry over into my academic and project work.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Activities & Involvement -->
+  <div class="section-block">
+    <h2 class="block-title">Academic &amp; Community Involvement</h2>
+    <p class="block-desc">Activities, roles, and contributions beyond individual coursework.</p>
+
+    <div class="activity-card">
+      <div class="activity-icon">🎓</div>
+      <div>
+        <div class="activity-title">BSc Applied Science — Active Student</div>
+        <div class="activity-meta">Rajarata University of Sri Lanka &nbsp;·&nbsp; 2023 – 2026</div>
+        <div style="margin-top:0.8rem; display:flex; flex-direction:column; gap:0.4rem">
+          <div style="display:flex; align-items:flex-start; gap:0.6rem; font-size:0.84rem; color:var(--muted)">
+            <span style="color:var(--gold); flex-shrink:0">▸</span>
+            <span><strong style="color:var(--ink)">FASExplorer Exhibition</strong> — Actively participated in the faculty-organised science and technology exhibition, showcasing academic work and engaging with research presented by peers and academics</span>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:0.6rem; font-size:0.84rem; color:var(--muted)">
+            <span style="color:var(--gold); flex-shrink:0">▸</span>
+            <span><strong style="color:var(--ink)">Vinivida Art Function</strong> — Participated in the faculty cultural arts event, contributing to the creative and cultural life of the Faculty of Applied Sciences</span>
+          </div>
+        </div>
+        <div class="tags" style="margin-top:0.8rem">
+          <span class="tag">Faculty Event</span>
+          <span class="tag">Exhibition</span>
+          <span class="tag">Cultural Activity</span>
+        </div>
+      </div>
+    </div>    
+
+    <div class="activity-card">
+      <div class="activity-icon">🔬</div>
+      <div>
+        <div class="activity-title">Mathematics Seminar Research — Team Member</div>
+        <div class="activity-meta">Rajarata University &nbsp;·&nbsp; 2026</div>
+        <div class="activity-desc">Contributed to a team research project that developed the first empirical traffic congestion index for Anuradhapura — a UNESCO World Heritage City. Collected and analysed 27,966 real-world data observations as part of the study.</div>
+      </div>
+    </div>
+
+    <div class="activity-card">
+      <div class="activity-icon">🏗️</div>
+      <div>
+        <div class="activity-title">Final Year Research Project  — Team Member</div>
+        <div class="activity-meta">Rajarata University &nbsp;·&nbsp; 2025 – 2026</div>
+        <div class="activity-desc">Core contributor to a final year research project developing an REAL-TIME EXPLAINABLE MULTIMODAL CONFIDENCE ESTIMATION IN AI-POWERED INTERVIEW SYSTEMS — combining deep learning, NLP, computer vision, and full-stack development into a single research-grade application.</div>
+      </div>
+    </div>
+
+    <div class="activity-card">
+      <div class="activity-icon">🌐</div>
+      <div>
+        <div class="activity-title">Self-Directed Learning & Personal Projects</div>
+        <div class="activity-meta">Ongoing &nbsp;·&nbsp;</div>
+        <div class="activity-desc">Beyond university assignments, independently pursued personal projects in Power BI, PostgreSQL, Python, and React — building a portfolio of real, deployable applications available on GitHub. Continuously upskilling through online certifications on HackerRank, Alison, and Great Learning.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Personal Quote / Aspiration -->
+  <div class="section-block">
+    <h2 class="block-title">My Aspiration</h2>
+    <p class="block-desc">What drives me forward every day.</p>
+    <div class="aspiration-box">
+      <div class="aspiration-text">
+        I want to build systems and solutions that use data and AI to solve real-world problems — not just in theory, but in ways that create tangible impact for communities and organisations.
+      </div>
+      <div class="aspiration-name">— Himaya Pathirage</div>
+    </div>
+  </div>
+
+  <div style="display:flex;justify-content:space-between;padding-top:2rem;border-top:1px solid rgba(200,169,81,0.15)">
+    <a href="skills.html" style="text-decoration:none;font-size:0.82rem;color:var(--muted)">← Skills</a>
+    <a href="personality.html" style="text-decoration:none;font-size:0.82rem;color:var(--gold);font-weight:600">Personality →</a>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-name">Himaya Pathirage</div>
+  <ul class="footer-nav">
+    <li><a href="qualifications.html">Qualifications</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="interests.html">Interests</a></li>
+    <li><a href="personality.html">Personality</a></li>
+    <li><a href="swot.html">SWOT</a></li>
+    <li><a href="goals.html">Goals</a></li>
+  </ul>
+
+  <!-- Replace <div>E-Portfolio &copy; 2026</div> with this -->
+  <div style="display:flex; gap:0.6rem; align-items:center;">
+
+    <a href="https://linkedin.com/in/himaya-pathirage-b94798361" 
+       target="_blank" rel="noopener noreferrer" style="text-decoration:none" title="LinkedIn">
+      <div style="width:34px;height:34px;border-radius:50%;border:1px solid rgba(200,169,81,0.3);display:flex;align-items:center;justify-content:center;color:rgba(244,241,235,0.5);transition:all 0.25s;cursor:pointer;"
+        onmouseover="this.style.background='var(--gold)';this.style.color='var(--ink)';this.style.borderColor='var(--gold)'"
+        onmouseout="this.style.background='';this.style.color='rgba(244,241,235,0.5)';this.style.borderColor='rgba(200,169,81,0.3)'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+      </div>
+    </a>
+
+    <a href="https://github.com/HimayaPathirage" 
+       target="_blank" rel="noopener noreferrer" style="text-decoration:none" title="GitHub">
+      <div style="width:34px;height:34px;border-radius:50%;border:1px solid rgba(200,169,81,0.3);display:flex;align-items:center;justify-content:center;color:rgba(244,241,235,0.5);transition:all 0.25s;cursor:pointer;"
+        onmouseover="this.style.background='var(--gold)';this.style.color='var(--ink)';this.style.borderColor='var(--gold)'"
+        onmouseout="this.style.background='';this.style.color='rgba(244,241,235,0.5)';this.style.borderColor='rgba(200,169,81,0.3)'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+        </svg>
+      </div>
+    </a>
+
+    <a href="mailto:pdht20@gmail.com" style="text-decoration:none" title="Email">
+      <div style="width:34px;height:34px;border-radius:50%;border:1px solid rgba(200,169,81,0.3);display:flex;align-items:center;justify-content:center;color:rgba(244,241,235,0.5);transition:all 0.25s;cursor:pointer;"
+        onmouseover="this.style.background='var(--gold)';this.style.color='var(--ink)';this.style.borderColor='var(--gold)'"
+        onmouseout="this.style.background='';this.style.color='rgba(244,241,235,0.5)';this.style.borderColor='rgba(200,169,81,0.3)'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.910 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/>
+        </svg>
+      </div>
+    </a>
+
+    <a href="tel:+94719879694" style="text-decoration:none" title="Phone">
+      <div style="width:34px;height:34px;border-radius:50%;border:1px solid rgba(200,169,81,0.3);display:flex;align-items:center;justify-content:center;color:rgba(244,241,235,0.5);transition:all 0.25s;cursor:pointer;"
+        onmouseover="this.style.background='var(--gold)';this.style.color='var(--ink)';this.style.borderColor='var(--gold)'"
+        onmouseout="this.style.background='';this.style.color='rgba(244,241,235,0.5)';this.style.borderColor='rgba(200,169,81,0.3)'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+        </svg>
+      </div>
+    </a>
+
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
