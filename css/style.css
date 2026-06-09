@@ -314,3 +314,14 @@ tbody tr:hover td { background: rgba(200,169,81,0.05); }
     grid-template-columns: 1fr !important;
   }
 }
+/* Typing animation */
+.typing-text { color: var(--gold); }
+.typing-text::after {
+  content: '|';
+  color: var(--gold);
+  animation: blink 0.7s step-end infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}

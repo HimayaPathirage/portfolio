@@ -124,6 +124,9 @@
   <div class="hero-ring"></div>
   <div class="hero-text fade-up">
     <h1 class="hero-name">Himaya<br>Pathirage</h1>
+    <div style="font-size:1.2rem; font-weight:500; margin-bottom:1rem; color:rgba(244,241,235,0.8);">
+      And I'm a <span class="typing-text" id="typing"></span>
+    </div>
     <p class="hero-tagline">A passionate and driven undergraduate committed to continuous growth, professional excellence, and making a meaningful impact in my field.</p>
     
     <div class="hero-social" style="display:flex; gap:0.8rem; margin-bottom:2rem; flex-wrap:wrap;">
@@ -328,5 +331,53 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/main.js"></script>
+
+<!-- Typing animation script -->
+<script>
+  const roles = [
+    "Aspiring Data Analyst ",
+    "BI Analyst Enthusiast",
+    "Web Developer"
+  ];
+
+  let roleIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  const typingEl = document.getElementById('typing');
+
+  function type() {
+    const currentRole = roles[roleIndex];
+
+    if (isDeleting) {
+      // Remove one character
+      typingEl.textContent = currentRole.substring(0, charIndex - 1);
+      charIndex--;
+    } else {
+      // Add one character
+      typingEl.textContent = currentRole.substring(0, charIndex + 1);
+      charIndex++;
+    }
+
+    // Typing speed
+    let speed = isDeleting ? 60 : 100;
+
+    if (!isDeleting && charIndex === currentRole.length) {
+      // Pause at end of word
+      speed = 1800;
+      isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+      // Move to next role
+      isDeleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+      speed = 400;
+    }
+
+    setTimeout(type, speed);
+  }
+
+  // Start typing
+  document.addEventListener('DOMContentLoaded', type);
+</script>
 </body>
 </html>
